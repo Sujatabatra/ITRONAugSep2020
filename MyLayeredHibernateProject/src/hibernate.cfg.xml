@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/itronhiber</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">sujata</property>
+
+        <!-- if schema exist update it otherwise create new schema-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!--Convert hibernate calls to MySQL5 syntax SQL-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <!--Show the generated SQL Queries on console-->
+        <property name="show_sql">true</property>
+
+        <property name="connection.pool_size">3</property>
+
+        <!--This class will participate in persistence context-->
+        <mapping class="com.sujata.bean.EmployeeEntity"></mapping>
+    </session-factory>
+</hibernate-configuration>
